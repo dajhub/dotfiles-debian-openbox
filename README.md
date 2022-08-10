@@ -1,1 +1,1 @@
-# dotfiles-debian-openbox
+# dotfiles-openbox
