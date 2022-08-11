@@ -16,7 +16,7 @@ echo "###############################################"
 echo '# Installing required packages for Openbox.'
 echo "###############################################"
 
- sudo dnf install -qy \ 
+sudo dnf install -qy \
             openbox \
             xbacklight \
             nitrogen \
