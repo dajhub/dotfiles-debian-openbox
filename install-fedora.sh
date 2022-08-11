@@ -23,7 +23,7 @@ sudo dnf install -qy \
             xorg-x11-drv-libinput \
             tint2 \
             volumeicon \
-            xorg-x11-server-utils \
+            xorg-x11-server-Xorg \
             network-manager-applet \
             lightdm-gtk
 
@@ -57,7 +57,6 @@ sudo dnf install -qy \
     nano \
     flameshot \
     wget \
-    ffmpeg \
     tumbler \
     lxappearance \
     picom \
