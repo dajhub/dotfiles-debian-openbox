@@ -1,0 +1,150 @@
+
+#---------- Keybindings for bspwm ----------#
+
+## Terminal ##
+super + Return
+	kitty
+
+##---------- Rofi launcher & dmenu ----------##
+
+
+## Dmenu Launcher ##
+#super + d
+#  $HOME/.config/dmenu/dmenu-patched
+
+## Rofi ##
+super + space
+  rofi -show drun windows -show-icons
+
+
+## File Browser ##
+super + e
+	 thunar
+
+## Gotop ##
+super + t
+ kitty -e gotop
+
+## Web Browser ##
+super + w
+  chromium
+
+## X11-color-picker ##
+super + shift + c
+  gcolor2
+
+## Gammastep ##
+super + g
+  killall gammastep
+
+super + shift + g
+  exec gammastep
+
+## Screenshot ##
+super + Print
+ maim ~/Pictures/screenshots/$(date +%s).png
+
+## Audio ##
+super + v
+ kitty -e pulseaudio
+
+## Volume up / Volume down ##
+{XF86AudioLowerVolume, XF86AudioRaiseVolume}
+  pactl set-sink-volume @DEFAULT_SINK@ {-5%, +5%}
+
+## Mute ##
+XF86AudioMute
+  pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+## Volume up / Volume down ##
+{alt + F11, alt + F12}
+  pactl set-sink-volume @DEFAULT_SINK@ {-5%, +5%}
+
+## Mute ##
+alt + F10
+  pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+## Brighness control ##
+XF86MonBrightness{Up,Down}
+	brightness{ --inc, --dec}
+
+## Restart polybar ##
+super + shift + p
+  ~/.config/polybar/scripts/launch.sh
+
+## Close a program ##
+super + q
+ bspc node -c
+
+## Quit the session ##
+super + shift + q
+ bspc {quit}
+
+## Logout Prompt ##
+super + ctrl + Delete
+ ~/.local/bin/scripts/logout
+
+## Kill A Program ##
+super + ctrl + shift + K
+ exec xkill
+
+## Restart Bspwm / Sxhkd ##
+super + shift + r
+ bspc wm -r && pkill -USR1 -x sxhkd
+
+## Toggle fullscreen on and off ##
+super + f
+  bspc node -t fullscreen || bspc node -t tiled
+
+## Toggle floating on and off ##
+super + shift + f
+   bspc node focused.tiled -t floating || bspc node focused.floating -t tiled
+
+## Focus the node in the given direction ##
+super + {_,shift + }{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
+
+## Expand a window by moving one of its side ##
+super + ctrl + {h,j,k,l}
+ {bspc node -z right -20 0; \
+ bspc node -z left +20 0, \
+ bspc node -z top 0 -20; \
+ bspc node -z bottom 0 +20, \
+ bspc node -z top 0 +20; \
+ bspc node -z bottom 0 -20, \
+ bspc node -z right +20 0; \
+ bspc node -z left -20 0}
+
+## Move from a workspace to another and focus between them back and forth ##
+super + {1-9,0}
+    desktop='^{1-9,10}'; \
+    bspc query -D -d "$desktop.focused" && bspc desktop -f last || bspc desktop -f "$desktop"
+
+## Send a program to a workspace and follow ##
+super + shift + {1-9,0}
+    bspc node -d '^{1-9,10}' --follow
+
+## Send an program to another workspace and stay on the current one ##
+super + ctrl {1-9,0}
+	 bspc node -d focused:'^{1-9,10}'
+
+## Cycle between workspaces ##
+super + n
+ bspc desktop -f {next}.local
+
+super + b
+ bspc desktop -f {prev}.local
+
+## Select 2 programs or more and send them to a workspace ##
+super + {_,shift + }s
+    bspc node -f {next,prev}.local
+
+## Move floating window ##
+super + alt + {h,j,k,l}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# Expand/contract a window by moving one of its side outward/inward
+alt  {Left,Down,Up,Right}
+    STEP=20; SELECTION={1,2,3,4}; \
+    bspc node -z $(echo "left -$STEP 0,bottom 0 $STEP,top 0 -$STEP,right $STEP 0" | cut -d',' -f$SELECTION) || \
+    bspc node -z $(echo "right -$STEP 0,top 0 $STEP,bottom 0 -$STEP,left $STEP 0" | cut -d',' -f$SELECTION)

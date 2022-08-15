@@ -1,0 +1,20 @@
+# display
+xrandr -s 1360x768 &
+
+# panel
+tint2 &
+
+# compositor
+picom &
+
+# notifications
+dunst &
+
+# wallpaper
+nitrogen --restore &
+
+# network  manager
+nm-applet &
+
+# keyboard shortcuts
+sxhkd &

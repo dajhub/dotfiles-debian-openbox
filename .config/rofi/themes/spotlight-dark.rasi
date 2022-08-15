@@ -7,9 +7,9 @@
 * {
     font:   "Roboto 11";
 
-    bg0:    #3B4252E6;
+    bg0:    #232a2dE6;
     bg1:    #7E7E7E80;
-    bg2:    #A3BE8CE6;
+    bg2:    #8ccf7eE6;
 
     fg0:    #DEDEDE;
     fg1:    #FFFFFF;
