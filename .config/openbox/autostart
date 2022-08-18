@@ -1,5 +1,8 @@
 # display
-xrandr -s 1360x768 &
+#xrandr -s 1360x768 &
+
+# lxpolkit
+/usr/bin/lxpolkit &
 
 # panel
 tint2 &
@@ -18,3 +21,6 @@ nm-applet &
 
 # keyboard shortcuts
 sxhkd &
+
+# volume icon
+(sleep 5 && volumeicon) &
