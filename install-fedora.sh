@@ -26,6 +26,7 @@ sudo dnf install -y \
             volumeicon \
             xorg-x11-server-Xorg \
             network-manager-applet \
+            lxpolkit \
             NetworkManager-wifi \
             lightdm-gtk
 
