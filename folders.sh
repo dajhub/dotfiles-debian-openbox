@@ -59,7 +59,7 @@ echo "############################################"
 
 echo "Copy .local/bin to .local/bin"
 
-cp -R ~/dotfiles-openbox/.local/bin* ~/.local/bin/
+cp -R ~/dotfiles-openbox/.local/bin* ~/.local/
 
 echo "############################################"
 echo "#   Bin has been copied across              "
@@ -68,12 +68,12 @@ echo "############################################"
 
 echo "Copy .config folders and files across to .config"
 
-cp -R ~/dotfiles-openbox/.config/geany* ~/.config/geany/
-cp -R ~/dotfiles-openbox/.config/kitty* ~/.config/kitty/
-cp -R ~/dotfiles-openbox/.config/openbox* ~/.config/openbox/
-cp -R ~/dotfiles-openbox/.config/rofi* ~/.config/rofi/
-cp -R ~/dotfiles-openbox/.config/sxhkd* ~/.config/sxhkd/
-cp -R ~/dotfiles-openbox/.config/tint2* ~/.config/tint2/
+cp -R ~/dotfiles-openbox/.config/geany* ~/.config/
+cp -R ~/dotfiles-openbox/.config/kitty* ~/.config/
+cp -R ~/dotfiles-openbox/.config/openbox* ~/.config/
+cp -R ~/dotfiles-openbox/.config/rofi* ~/.config/
+cp -R ~/dotfiles-openbox/.config/sxhkd* ~/.config/
+cp -R ~/dotfiles-openbox/.config/tint2* ~/.config/
 
 
 echo "############################################"
