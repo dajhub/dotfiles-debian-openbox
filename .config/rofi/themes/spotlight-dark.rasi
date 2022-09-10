@@ -28,7 +28,7 @@ window {
 
     location:       center;
     width:          640;
-    y-offset:       -200;
+    y-offset:       -47;
     border-radius:  8;
 }
 

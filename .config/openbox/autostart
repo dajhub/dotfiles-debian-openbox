@@ -5,7 +5,8 @@
 /usr/bin/lxpolkit &
 
 # panel
-tint2 &
+#tint2 &
+$HOME/.config/openbox/polybar/scripts/launch.sh &
 
 # compositor
 picom &
@@ -17,10 +18,16 @@ dunst &
 nitrogen --restore &
 
 # network  manager
-nm-applet &
+#nm-applet &
 
 # keyboard shortcuts
 sxhkd &
 
 # volume icon
-(sleep 5 && volumeicon) &
+#(sleep 5 && volumeicon) &
+
+# brightness
+#zenity &
+
+# brightness
+#~.config/tint2/scripts/brightness-icon.sh
