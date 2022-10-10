@@ -90,20 +90,6 @@ echo "###############################################"
 echo '# Packages for Openbox installed.'
 echo "###############################################"
 
-#--- 
-
-echo "###############################################"
-echo '# Install and enable lightdm display manager.'
-echo "###############################################"
-
-yay -S --noconfirm lightdm lightdm-gtk-greeter
-
-systemctl start lightdm.service && systemctl enable lightdm.service
-
-echo "###############################################"
-echo '# Lightdm display manager installed.'
-echo "###############################################"
-
 #---
 
 echo "###############################################"
@@ -157,6 +143,23 @@ yay -Sy --noconfirm \
     inkscape \
     task \
     gcolor2 
+
+
+#--- 
+
+echo "###############################################"
+echo '# Install and enable lightdm display manager.'
+echo "###############################################"
+
+yay -S --noconfirm lightdm lightdm-gtk-greeter
+
+systemctl start lightdm.service && systemctl enable lightdm.service
+
+echo "###############################################"
+echo '# Lightdm display manager installed.'
+echo "###############################################"
+
+#---
 
 echo "###############################################"
 echo '# FINISHED.'
