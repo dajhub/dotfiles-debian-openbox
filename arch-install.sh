@@ -1,27 +1,27 @@
-echo "###############################################"
-echo '# Install yay'
-echo "###############################################"
-
-pacman -S --noconfirm --needed git base-devel
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
-
-pacman -S --noconfirm --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
-
-yay -Syu --noconfirm
-
-# ---
-
-echo "###############################################"
-echo '# yay installed'
-echo "###############################################"
+#echo "###############################################"
+#echo '# Install yay'
+#echo "###############################################"
+#
+#pacman -S --noconfirm --needed git base-devel
+#git clone https://aur.archlinux.org/yay.git
+#cd yay
+#makepkg -si
+#
+#pacman -S --noconfirm --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+#
+#yay -Syu --noconfirm
+#
+## ---
+#
+#echo "###############################################"
+#echo '# yay installed'
+#echo "###############################################"
 
 echo "###############################################"
 echo '# Install basic packages'
 echo "###############################################"
 
-yay -Syy --noconfirm \
+pacman -Syy --noconfirm \
             vlc \
             zip \
             unzip \
@@ -49,7 +49,7 @@ echo '# Installing required packages for Openbox.'
 echo "###############################################"
 
 # Install Openbox and dependences
-yay -Sy --noconfirm \
+pacman -Sy --noconfirm \
             openbox \
             obconf \
             tint2 \
@@ -97,7 +97,7 @@ echo '# Install thunar.'
 echo "###############################################"
 
 # Install thunar
-yay -Sy --noconfirm thunar thunar-archive-plugin thunar-media-tags-plugin catfish gvfs gvfs-mtp gvfs-nfs gvfs-smb
+pacman -Sy --noconfirm thunar thunar-archive-plugin thunar-media-tags-plugin catfish gvfs gvfs-mtp gvfs-nfs gvfs-smb
 
 echo "###############################################"
 echo '# Installed thunar.'
@@ -128,7 +128,7 @@ echo "###############################################"
 echo '# Installing additional packages.'
 echo "###############################################"
 
-yay -Sy --noconfirm \
+pacman -Sy --noconfirm \
     xed \
     kitty \
     chromium \
@@ -151,7 +151,7 @@ echo "###############################################"
 echo '# Install and enable lightdm display manager.'
 echo "###############################################"
 
-yay -S --noconfirm lightdm lightdm-gtk-greeter
+pacman -S --noconfirm lightdm lightdm-gtk-greeter
 
 systemctl start lightdm.service && systemctl enable lightdm.service
 
