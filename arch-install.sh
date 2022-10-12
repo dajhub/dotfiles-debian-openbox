@@ -105,22 +105,22 @@ echo "###############################################"
 
 #---
 
-echo "###############################################"
-echo '# Install VSCodium.'
-echo "###############################################"
- 
-(
-    sudo -u nobody git clone https://aur.archlinux.org/vscodium-bin /tmp/vscodium-bin
-    cd /tmp/vscodium-bin
-    sudo -u nobody makepkg -sirc --noconfirm
-)
+#echo "###############################################"
+#echo '# Install VSCodium.'
+#echo "###############################################"
+# 
+#(
+#    sudo -u nobody git clone https://aur.archlinux.org/vscodium-bin /tmp/vscodium-bin
+#    cd /tmp/vscodium-bin
+#    sudo -u nobody makepkg -sirc --noconfirm
+#)
+#
+## Cleanup
+#rm -rf /tmp/vscodium-bin
 
-# Cleanup
-rm -rf /tmp/vscodium-bin
-
-echo "###############################################"
-echo '# VSCodium installed.'
-echo "###############################################"
+#echo "###############################################"
+#echo '# VSCodium installed.'
+#echo "###############################################"
 
 #---
 
